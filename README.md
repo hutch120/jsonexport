@@ -5,20 +5,16 @@ This module makes easy to convert JSON to CSV and its very customizable.
 
 Changelog
 ----------------------
+v1.0.6.1 - Updated to run standalone in a browser and added an option to return an array with [0] containing headers, [1] containing data.
 v1.0.6 - Create new lines in the CSV file to handle JSON objects with arrays<br>
 
 # Usage
 
-Installation command is `npm install jsonexport`.
+Simply include in HTML along with underscore library.
 
-```javascript
-var jsonexport = require('jsonexport');
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="index.js" type="text/javascript" charset="utf-8"></script>
 
-jsonexport({lang: 'Node.js',module: 'jsonexport'}, {rowDelimiter: '|'}, function(err, csv){
-    if(err) return console.log(err);
-    console.log(csv);
-});
-```
 
 ## JSON Array Example
 
@@ -27,8 +23,6 @@ jsonexport({lang: 'Node.js',module: 'jsonexport'}, {rowDelimiter: '|'}, function
 #### Code
 
 ```javascript
-var jsonexport = require('jsonexport');
-
 var contacts = [{
     name: 'Bob',
     lastname: 'Smith'
@@ -178,7 +172,7 @@ size;10,20
 In order to get the most of out of this module, you can customize many parameters and functions.
 
 ####Options
-
+- `returnHorizontalRowsArray` - `Boolean` Set this option to true to return a raw array with [0] contains headers, [1-n] contains data.
 - `headerPathString` - `String` Used to create the propriety path, defaults to `.` example `contact: {name: 'example}` = `contact.name`
 - `rowDelimiter` - `String` Change the file row delimiter, defaults to `,` for **cvs format**. `\t` for **xls format**.
 - `endOfLine` - `String` Replace the OS default EOL.
