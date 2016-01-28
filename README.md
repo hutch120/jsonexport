@@ -5,16 +5,25 @@ This module makes easy to convert JSON to CSV and its very customizable.
 
 Changelog
 ----------------------
-v1.0.6.1 - Updated to run standalone in a browser and added an option to return an array with [0] containing headers, [1] containing data.
+v1.0.6.1 - Branched from cnova and updated to run standalone in a browser and added an option to return an array with [0] containing headers, [1] containing data.
+
 v1.0.6 - Create new lines in the CSV file to handle JSON objects with arrays<br>
+
 
 # Usage
 
 Simply include in HTML along with underscore library.
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript" charset="utf-8"></script>
-<script src="index.js" type="text/javascript" charset="utf-8"></script>
+`<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript" charset="utf-8"></script>`
+`<script src="index.js" type="text/javascript" charset="utf-8"></script>`
 
+```javascript
+var options = {};
+options.verticalOutput = false;
+options.includeHeaders = false;
+options.returnHorizontalRowsArray = true; // Added by FieldData.info
+jsonexport(data, options, _.jsonExportCallback);
+```
 
 ## JSON Array Example
 
